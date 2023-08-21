@@ -11,17 +11,13 @@ import unittest
 3. Сложность - 1. Затраченное время 1 час (Дольше считал память и макс. размер данных).
 """
 
-def task1(decimals=None):
-    if decimals is not None:  # Для оценки времени
-        shares = [Decimal(k) for k in decimals]
-    else:
-        count = int(input())
-        shares = [Decimal(input()) for _ in range(count)]
+def task1():
+    count = int(input())
+    shares = [Decimal(input()) for _ in range(count)]
     sum_shares = sum(shares)
     normalized_list = [(share / sum_shares).quantize(Decimal("1.000")) for share in shares]
     for norm_share in normalized_list:
-        if decimals is None:
-            print(norm_share)
+        print(norm_share)
 
     # current_memory, peak_memory = tracemalloc.get_traced_memory()
     # print(f"Текущее использование памяти: {current_memory / 10 ** 3} KB")
