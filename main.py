@@ -1,6 +1,4 @@
-import sys
 from decimal import Decimal
-import timeit
 import tracemalloc
 import unittest
 
